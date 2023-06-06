@@ -4,17 +4,25 @@
   }
   
   body {
-    background: #333;
-    color: hsl(200, 100%, 90%);
+    background: #ffffff;
+    color: hsl(195, 5%, 15%);
     max-width: 400px;
     padding: 1rem;
     margin: 0 auto;
   }
   
-  .new-item-form {
+  .new-marker-form {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+
+    background: hsl(34, 100%, 49%);
+    border: 1px solid hsl(34, 100%, 49%);
+    color: hsla(0, 0%, 100%, 0.952);
+    padding: 0.5em 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    outline: none;
   }
   
   .form-row {
@@ -24,24 +32,45 @@
   }
   
   .btn {
-    background: hsl(200, 100%, 50%, 0.1);
-    border: 1px solid hsl(200, 100%, 50%);
-    color: hsl(200, 100%, 50%);
+    background: hsl(34, 100%, 49%);
+    border: 1px solid hsl(34, 100%, 49%);
+    color: hsla(0, 0%, 100%, 0.952);
     padding: 0.25em 0.5em;
     border-radius: 0.25em;
     cursor: pointer;
     outline: none;
   }
+
+  .btn-add {
+    background: hsl(34, 100%, 49%);
+    border: 1px solid hsl(0, 0%, 100%);
+    color: hsl(0, 0%, 100%);
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .btn-add:hover,
+  .btn-add:focus-visible {
+    background: hsla(139, 25%, 32%, 0.2);
+  }
   
   .btn:hover,
   .btn:focus-visible {
-    background: hsl(200, 100%, 50%, 0.2);
+    background: hsla(139, 25%, 32%, 0.2);
   }
   
   .btn.btn-danger {
-    background: hsl(0, 100%, 40%, 0.1);
-    border: 1px solid hsl(0, 100%, 40%);
-    color: hsl(0, 100%, 40%);
+    background: hsl(0, 100%, 40%);
+    border: 1px solid hsl(0, 100%, 40%);;
+    color: hsla(0, 0%, 100%);
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    outline: none;
+
+    
   }
   
   .btn.btn-danger:hover,
@@ -49,16 +78,16 @@
     background: hsl(0, 100%, 40%, 0.2);
   }
   
-  .new-item-form input {
+  .new-marker-form input {
     outline: none;
-    border: 1px solid hsl(200, 100%, 40%);
-    background: hsl(200, 100%, 30%);
+    border: 1px solid hsl(34, 100%, 49%);
+    background: hsl(0, 0%, 100%);
     border-radius: 0.25em;
     padding: 0.25em 0.5em;
-    color: hsl(200, 100%, 90%);
+    color: hsl(0, 0%, 0%);
   }
   
-  .new-item-form input:focus {
+  .new-marker-form input:focus {
     border: 1px solid hsl(200, 100%, 70%);
   }
   
@@ -76,7 +105,7 @@
   }
   
   .list li:has(input:checked) label {
-    color: hsl(200, 20%, 40%);
+    color: hsl(33, 100%, 49%);
   }
   
   .list {
@@ -99,7 +128,7 @@
   }
   
   .list li:has(input:focus-visible) label {
-    outline: 1px solid hsl(200, 100%, 50%);
+    outline: 1px solid hsl(30, 100%, 50%);
   }
   
   .list li input {
@@ -116,25 +145,26 @@
     display: block;
     width: 0.9rem;
     height: 0.9rem;
-    background: hsl(200, 100%, 90%);
+    background: hsl(0, 0%, 100%);
     border-radius: 0.25em;
+    border: 1px solid hsl(34, 100%, 49%);
     display: flex;
     justify-content: center;
     align-items: center;
   }
   
   .list li label:hover::before {
-    background: hsl(200, 100%, 80%);
+    border: 2px solid hsl(32, 100%, 50%);
   }
   
   .list li:has(input:checked) label::before {
     content: "✔";
-    background: hsl(200, 100%, 40%);
-    color: hsl(200, 100%, 90%);
+    background: hsl(32, 100%, 50%);
+    color: hsl(0, 0%, 100%);
     font-size: 0.75rem;
     font-weight: bold;
   }
   
   .list li:has(input:checked) label:hover::before {
-    background: hsl(200, 100%, 30%);
+    order: 2px solid hsl(32, 100%, 50%);
   }

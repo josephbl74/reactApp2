@@ -18,7 +18,7 @@ export function NewMarkerForm({ onSubmit }){
     return(
         <form onSubmit={handleSubmit} className="new-marker-form">
             <div className="form-row">
-                <h3 htmlFor="marker">New Marker</h3>
+                <h3 htmlFor="marker">New Marker</h3> 
                 {/* marker's title input */}
                 <label htmlFor="title">Title</label>
                 <input 
@@ -29,7 +29,7 @@ export function NewMarkerForm({ onSubmit }){
                 />
                 <br></br>
             </div>
-            <button className="btn">Add+</button>
+            <button className="btn-add">Add+</button>
         </form>
     )
 }
