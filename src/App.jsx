@@ -17,10 +17,10 @@ export default function App(){
     localStorage.setItem("MARKERS", JSON.stringify(markers))
   }, [markers])
 
-  function addMarker(title){
+  function addMarker(title, description, website, lat, lng){
     setMarkers((currentMarkers) => [
       ...currentMarkers, 
-      {id: crypto.randomUUID(), title, completed: false},
+      {id: crypto.randomUUID(), title, description, website, lat, lng, completed: false},
     ]
     );
   }

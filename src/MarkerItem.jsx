@@ -1,4 +1,4 @@
-export function MarkerItem({completed, id, title, toggleMarker, deleteMarker}){
+export function MarkerItem({completed, id, title, description, toggleMarker, deleteMarker}){
     return (
         <li>
             <label>
@@ -9,6 +9,13 @@ export function MarkerItem({completed, id, title, toggleMarker, deleteMarker}){
                 />
                 {title}
             </label>
+
+            <button
+            onClick={() => deleteMarker(id)}
+                className="btn-open"
+            >Open
+            </button>
+
             <button
             onClick={() => deleteMarker(id)}
                 className="btn"
