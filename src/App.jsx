@@ -38,6 +38,34 @@ export default function App(){
 
 
 
+
+
+  // //------- connecting to backend: attempt 3 >> mongodb
+
+
+
+  // const [markers, setMarkers] = useState([]);
+
+  // useEffect(() => {
+  //   fetch('/api/markers')
+  //     .then(response => {
+  //       return response.text().then(text => {
+  //         console.log(text);
+  //         return text ? JSON.parse(text) : {};
+  //       });
+  //     })
+  //     .then(data => setMarkers(data))
+  //     .catch(error => console.error(error));
+  // }, []);
+
+
+
+
+
+
+
+
+
   // -------- connecting to localStorage: it works
 
   //useEffect() runs the described function every time the array passed sa second property changes
@@ -91,6 +119,12 @@ export default function App(){
       <NewMarkerForm onSubmit={addMarker}/>
 
       <h1 className="header">Markers</h1>
+
+      {/* <ul>
+        {markers.map(marker => (
+          <li key={marker._id}>{marker.title}</li>
+        ))}
+      </ul> */}
 
       <MarkerList 
         markers={markers}
