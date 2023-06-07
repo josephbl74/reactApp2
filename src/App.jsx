@@ -1,9 +1,47 @@
-import { useState, useEffect } from "react"
-import { NewMarkerForm } from "./NewMarkerForm"
-import { MarkerList } from "./MarkerList"
-import "./styles.css"
+import { useState, useEffect } from "react";
+import { NewMarkerForm } from "./NewMarkerForm";
+import { MarkerList } from "./MarkerList";
+import axios from 'axios';
+import { v4 as uuidv4 } from 'uuid';
+import "./styles.css";
 
 export default function App(){
+
+// //------- connecting to backend: attempt 2
+
+//   const [markers, setMarkers] = useState([])
+
+//   useEffect(() => {
+//     // Fetch markers from the backend server
+//     axios.get('http://localhost:5000/api')
+//       .then(response => {
+//         setMarkers(response.data.markers || []);
+//       })
+//       .catch(error => {
+//         console.error('Error fetching markers:', error);
+//       });
+//   }, []);
+
+//   useEffect(() => {
+//     // Update markers on the backend server whenever it changes
+//     axios.post('http://localhost:5000/api', { markers })
+//       .then(() => {
+//         console.log('Markers updated successfully');
+//       })
+//       .catch(error => {
+//         console.error('Error updating markers:', error);
+//       });
+//   }, [markers]);
+
+
+
+
+
+
+  // -------- connecting to localStorage: it works
+
+  //useEffect() runs the described function every time the array passed sa second property changes
+  // allows exporting data to our local storage
 
   const [markers, setMarkers]=useState(() => {
     const localValue=localStorage.getItem("MARKERS")
@@ -11,20 +49,24 @@ export default function App(){
     return JSON.parse(localValue)
   })
 
-  //useEffect() runs the described function every time the array passed sa second property changes
-  // allows exporting data to our local storage
+  
   useEffect(() => {
     localStorage.setItem("MARKERS", JSON.stringify(markers))
   }, [markers])
 
+
+
+
+  // ------- functions
+
   function addMarker(title, description, website, lat, lng){
     setMarkers((currentMarkers) => [
       ...currentMarkers, 
-      {id: crypto.randomUUID(), title, description, website, lat, lng, completed: false},
+      {id: uuidv4(), title, description, website, lat, lng, completed: false},
     ]
     );
   }
-
+ 
   function toggleMarker(id, completed) {
     setMarkers(currentMarkers =>{
       return currentMarkers.map(marker => {
